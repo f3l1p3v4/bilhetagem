@@ -4,42 +4,43 @@
       <v-row>
         <v-col
           cols="12"
-          md="4"
+          md="5"
         >
           <v-text-field
-            v-model="firstname"
+            v-model="car"
             :rules="nameRules"
-            :counter="10"
-            label="First name"
+            :counter="4"
+            label="Carro"
             required
           ></v-text-field>
         </v-col>
 
         <v-col
           cols="12"
-          md="4"
+          md="5"
         >
-          <v-text-field
-            v-model="lastname"
-            :rules="nameRules"
-            :counter="10"
-            label="Last name"
-            required
-          ></v-text-field>
+          <v-select :items="items" label="Categoria"></v-select>
         </v-col>
 
         <v-col
           cols="12"
-          md="4"
+          md="2"
         >
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-          ></v-text-field>
+          <v-btn color="info" class="my-5 ml-5" @click="toSave">Salvar</v-btn>
         </v-col>
       </v-row>
     </v-container>
   </v-form>
 </template>
+
+<script>
+
+export default {
+  data: () => ({
+    items: ["FICHAS DO DIA", "PLANOS DO DIA", "PEDIR"],
+  }),
+  methods: {
+
+  }
+};
+</script>
