@@ -103,6 +103,7 @@
         { text: '4006', icon: 'mdi-bus-side' },
         { text: '4202', icon: 'mdi-bus-side' },
         { text: '4251', icon: 'mdi-bus-side' },
+        { text: '4251', icon: 'mdi-bus-side' },
       ],
     }),
   }
