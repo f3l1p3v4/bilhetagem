@@ -26,7 +26,7 @@
           cols="12"
           md="4"
         >
-          <v-select :items="group" label="Grupo de defeito"></v-select>
+          <v-select :items="groups" label="Grupo de defeito"></v-select>
         </v-col>
 
         <v-col
