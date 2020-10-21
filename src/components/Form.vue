@@ -8,7 +8,7 @@
         >
           <v-text-field
             v-model="car"
-            :rules="nameRules"
+            :rules="carRules"
             :counter="4"
             label="Carro"
             required
@@ -37,7 +37,14 @@
 
 export default {
   data: () => ({
+    valid: false,
+    car: '',
+    categorie: '',
     items: ["FICHAS DO DIA", "PLANOS DO DIA", "PEDIR"],
+    carRules: [
+      v => !!v || 'Carro é obrigatório',
+      v => v.length <= 4 || 'Carro deve ter apenas 4 caracteres',
+    ],
   }),
   methods: {
 
