@@ -1,5 +1,5 @@
 <template>
-<v-row>
+<v-row style="max-width: 1400px; margin: 0 auto;">
   <v-col
     cols="12"
     md="4"
