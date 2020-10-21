@@ -8,6 +8,7 @@
       class="mx-auto"
       max-width="300"
       tile
+      elevation="11"
     >
       <v-list rounded>
         <v-subheader>FICHAS DO DIA</v-subheader>
@@ -38,6 +39,7 @@
       class="mx-auto"
       max-width="300"
       tile
+      elevation="11"
     >
       <v-list rounded>
         <v-subheader>PLANOS DO DIA</v-subheader>
@@ -68,6 +70,7 @@
       class="mx-auto"
       max-width="300"
       tile
+      elevation="11"
     >
       <v-list rounded>
         <v-subheader>PEDIR</v-subheader>
