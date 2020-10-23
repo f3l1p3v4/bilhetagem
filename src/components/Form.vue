@@ -153,7 +153,7 @@ export default {
     dayPlans: [],
     ask: [],
     items: ["FICHAS DO DIA", "PLANOS DO DIA", "PEDIR"],
-    groups: ["VALIDADOR", "CATRACA", "CÂMERA", "TABLET", "G100", "SWITCH"],
+    groups: ["VALIDADOR", "CATRACA", "CÂMERA", "TABLET", "G100", "SWITCH", "TELEMETRIA"],
     busRules: [
       v => !!v || 'Carro é obrigatório',
       v => v.length <= 4 || 'Carro deve ter apenas 4 caracteres',
