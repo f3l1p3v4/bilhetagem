@@ -10,7 +10,6 @@
 
     <v-main>
       <Form />
-      <List />
     </v-main>
 
     <v-footer app>
@@ -24,13 +23,11 @@
 
 <script>
 import Form from './components/Form';
-import List from './components/List';
 
 export default {
   name: 'App',
   components: {
-    Form,
-    List
+    Form
   },
   data: () => ({
     //

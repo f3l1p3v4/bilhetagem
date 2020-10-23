@@ -13,6 +13,15 @@ export default {
       .post("/bushes", bus)
       .then(response => response.data);
   },
+  async filterBushes(categorie) {
+    return API_URL 
+        .get("/bushes", {
+            headers: {
+                categorie: categorie
+            }
+        })
+        .then(response => response.data);
+  },
   async changeStatus(status) {
     return API_URL
       .put("/bushes", status)
