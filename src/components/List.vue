@@ -1,5 +1,5 @@
 <template>
-<v-row style="max-width: 1400px; margin: 0 auto;">
+<v-row>
   <v-col
     cols="12"
     md="4"
@@ -17,14 +17,14 @@
           color="primary"
         >
           <v-list-item
-            v-for="(item, i) in items"
+            v-for="(dayFile, i) in dayFiles"
             :key="i"
           >
             <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
+              <v-icon>mdi-bus-side</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title v-text="item.text"></v-list-item-title>
+              <v-list-item-title v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -48,14 +48,14 @@
           color="primary"
         >
           <v-list-item
-            v-for="(item, i) in items"
+            v-for="(dayplan, i) in dayPlans"
             :key="i"
           >
             <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
+              <v-icon>mdi-bus-side</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title v-text="item.text"></v-list-item-title>
+              <v-list-item-title v-text="dayplan.bus"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -79,14 +79,14 @@
           color="green"
         >
           <v-list-item
-            v-for="(item, i) in items"
+            v-for="(as, i) in ask"
             :key="i"
           >
             <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
+              <v-icon>mdi-bus-side</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title v-text="item.text"></v-list-item-title>
+              <v-list-item-title v-text="`${as.bus} - ${as.group}`"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -97,17 +97,38 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      selectedItem: 1,
-      items: [
-        { text: '4230', icon: 'mdi-bus-side' },
-        { text: '4232', icon: 'mdi-bus-side' },
-        { text: '4006', icon: 'mdi-bus-side' },
-        { text: '4202', icon: 'mdi-bus-side' },
-        { text: '4251', icon: 'mdi-bus-side' },
-        { text: '4251', icon: 'mdi-bus-side' },
-      ],
-    }),
+import HttpRequestUtil from "@/util/HttpRequestUtil";
+
+export default {
+  data: () => ({
+    selectedItem: 1,
+    dayFiles: [],
+    dayPlans: [],
+    ask: []
+  }),
+  methods: {
+    searchDayFiles() {
+      HttpRequestUtil.filterBushes("FICHAS DO DIA").then(response => {
+        this.dayFiles = response;
+      });
+    },
+
+    searchDayPlans() {
+      HttpRequestUtil.filterBushes("PLANOS DO DIA").then(response => {
+        this.dayPlans = response;
+      });
+    },
+
+    searchAsk() {
+      HttpRequestUtil.filterBushes("PEDIR").then(response => {
+        this.ask = response;
+      });
+    },
+  },
+  mounted() {
+    this.searchDayFiles();
+    this.searchDayPlans();
+    this.searchAsk();
   }
+}
 </script>

@@ -8,8 +8,9 @@
       </span>
     </v-app-bar>
 
-    <v-main>
+    <v-main style="width: 100%; max-width: 1400px; margin: 0 auto;">
       <Form />
+      <List />
     </v-main>
 
     <v-footer app>
@@ -23,11 +24,13 @@
 
 <script>
 import Form from './components/Form';
+import List from './components/List';
 
 export default {
   name: 'App',
   components: {
-    Form
+    Form,
+    List
   },
   data: () => ({
     //

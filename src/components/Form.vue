@@ -1,5 +1,4 @@
 <template>
-<v-app style="max-width: 1400px; margin: 0 auto;">
   <v-form v-model="valid">
     <v-container>
       <v-row>
@@ -39,104 +38,34 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-form>
 
-  <v-row>
-  <v-col
-    cols="12"
-    md="4"
-  >
-    <v-card
-      class="mx-auto"
-      max-width="300"
-      tile
-      elevation="11"
-    >
-      <v-list rounded>
-        <v-subheader>FICHAS DO DIA</v-subheader>
-        <v-list-item-group
-          v-model="selectedItem"
-          color="primary"
-        >
-          <v-list-item
-            v-for="(dayFile, i) in dayFiles"
-            :key="i"
-          >
-            <v-list-item-icon>
-              <v-icon>mdi-bus-side</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-card>
-  </v-col>
-    <v-col
-    cols="12"
-    md="4"
-  >
-    <v-card
-      class="mx-auto"
-      max-width="300"
-      tile
-      elevation="11"
-    >
-      <v-list rounded>
-        <v-subheader>PLANOS DO DIA</v-subheader>
-        <v-list-item-group
-          v-model="selectedItem"
-          color="primary"
-        >
-          <v-list-item
-            v-for="(dayplan, i) in dayPlans"
-            :key="i"
-          >
-            <v-list-item-icon>
-              <v-icon>mdi-bus-side</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title v-text="dayplan.bus"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-card>
-  </v-col>
-    <v-col
-    cols="12"
-    md="4"
-  >
-    <v-card
-      class="mx-auto"
-      max-width="300"
-      tile
-      elevation="11"
-    >
-      <v-list rounded>
-        <v-subheader>PEDIR</v-subheader>
-        <v-list-item-group
-          v-model="selectedItem"
-          color="green"
-        >
-          <v-list-item
-            v-for="(as, i) in ask"
-            :key="i"
-          >
-            <v-list-item-icon>
-              <v-icon>mdi-bus-side</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title v-text="`${as.bus} - ${as.group}`"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-card>
-  </v-col>
-</v-row>
-</v-app>
+    <!-- Dialog de Erro nos campos-->
+    <template>
+        <v-row justify="center">
+            <v-dialog v-model="dialogErro" max-width="290">
+                <v-card class="text-center">
+                <v-icon color="info" size="36" class="mt-6">mdi-emoticon-sad</v-icon>
+
+                <v-card-title class="headline">Ops algo deu errado!</v-card-title>
+
+                <v-card-text>Favor tente preencher todos os campos corretamente!!!</v-card-text>
+
+                <v-card-actions>
+
+                  <v-btn color="info" style="margin: 0 auto" text @click="dialogErro = false">Continuar</v-btn>
+
+                </v-card-actions>
+                </v-card>
+            </v-dialog>
+        </v-row>
+    </template>
+    <v-overlay :value="overlay">
+      <v-progress-circular
+        indeterminate
+        size="64"
+      ></v-progress-circular>
+    </v-overlay>
+  </v-form>
 </template>
 
 <script>
@@ -145,27 +74,17 @@ import HttpRequestUtil from "@/util/HttpRequestUtil";
 export default {
   data: () => ({
     valid: false,
+    dialogErro: false,
+    saved: [],
+    overlay: false,
     bus: '',
     categorie: '',
     group: '',
-    bushes: [],
-    dayFiles: [],
-    dayPlans: [],
-    ask: [],
     items: ["FICHAS DO DIA", "PLANOS DO DIA", "PEDIR"],
     groups: ["VALIDADOR", "CATRACA", "CÂMERA", "TABLET", "G100", "SWITCH", "TELEMETRIA"],
     busRules: [
       v => !!v || 'Carro é obrigatório',
       v => v.length <= 4 || 'Carro deve ter apenas 4 caracteres',
-    ],
-    selectedItem: 1,
-    categories: [
-      { text: '4230', icon: 'mdi-bus-side' },
-      { text: '4232', icon: 'mdi-bus-side' },
-      { text: '4006', icon: 'mdi-bus-side' },
-      { text: '4202', icon: 'mdi-bus-side' },
-      { text: '4251', icon: 'mdi-bus-side' },
-      { text: '4251', icon: 'mdi-bus-side' },
     ],
   }),
   methods: {
@@ -179,11 +98,13 @@ export default {
         bus.group = this.group;
 
         HttpRequestUtil.saveBushes(bus).then(response => {
-          this.bushes.push(response);
-          this.searchBushes()
+          this.saved = response;
+          window.location.reload();
+          this.overlay = !this.overlay;
         });
+
       } else {
-        alert("Algo deu errado");
+        this.dialogErro = true;
       }
         this.clearFields();
     },
@@ -200,30 +121,14 @@ export default {
       this.bus = "";
       this.categorie = "";
       this.group = "";
-    },
-
-    searchDayFiles() {
-      HttpRequestUtil.filterBushes("FICHAS DO DIA").then(response => {
-        this.dayFiles = response;
-      });
-    },
-
-    searchDayPlans() {
-      HttpRequestUtil.filterBushes("PLANOS DO DIA").then(response => {
-        this.dayPlans = response;
-      });
-    },
-
-    searchAsk() {
-      HttpRequestUtil.filterBushes("PEDIR").then(response => {
-        this.ask = response;
-      });
+    }
+  },
+  watch: {
+    overlay (val) {
+      val && setTimeout(() => {
+        this.overlay = false
+      }, 5000)
     },
   },
-  mounted() {
-    this.searchDayFiles();
-    this.searchDayPlans();
-    this.searchAsk();
-  }
 };
 </script>
