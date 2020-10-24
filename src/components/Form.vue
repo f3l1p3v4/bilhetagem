@@ -99,8 +99,8 @@ export default {
 
         HttpRequestUtil.saveBushes(bus).then(response => {
           this.saved = response;
-          window.location.reload();
           this.overlay = !this.overlay;
+          window.location.reload();
         });
 
       } else {
