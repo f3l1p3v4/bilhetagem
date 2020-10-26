@@ -25,7 +25,7 @@
               <v-list-item-content>
                 <v-list-item-title v-if="dayFile.status === 'finalizado'" :class="`green--text`" v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
                 <v-list-item-title v-else-if="dayFile.status === 'execução'" :class="`primary--text`" v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
-                <v-list-item-title v-else v-text="`${dayFile.bus}`"></v-list-item-title>
+                <v-list-item-title v-else v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
               </v-list-item-content>
             </template>
 
@@ -103,6 +103,7 @@
         <v-list-group
           v-for="(as, i) in ask"
           :key="i"
+          color="grey"
         >
           <template v-slot:activator>
             <v-list-item-icon>
@@ -113,19 +114,19 @@
             <v-list-item-content>
               <v-list-item-title v-if="as.status === 'finalizado'" :class="`green--text`" v-text="`${as.bus} - ${as.group}`"></v-list-item-title>
               <v-list-item-title v-else-if="as.status === 'execução'" :class="`primary--text`" v-text="`${as.bus} - ${as.group}`"></v-list-item-title>
-              <v-list-item-title v-else v-text="`${as.bus}`"></v-list-item-title>
+              <v-list-item-title v-else v-text="`${as.bus} - ${as.group}`"></v-list-item-title>
             </v-list-item-content>
           </template>
 
-          <v-list-item @click="changeExecution(as)">
+          <v-list-item>
             <v-list-item-content>
-              <v-list-item-title>Execução</v-list-item-title>
+              <v-list-item-title>Ficha</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           
-          <v-list-item @click="changeFinished(as)">
+          <v-list-item>
             <v-list-item-content>
-              <v-list-item-title>Finalizado</v-list-item-title>
+              <v-list-item-title>Plano</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
