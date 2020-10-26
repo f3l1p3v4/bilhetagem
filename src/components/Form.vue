@@ -59,6 +59,7 @@
             </v-dialog>
         </v-row>
     </template>
+    <!-- Loading -->
     <v-overlay :value="overlay">
       <v-progress-circular
         indeterminate
@@ -80,8 +81,9 @@ export default {
     bus: '',
     categorie: '',
     group: '',
-    items: ["FICHAS DO DIA", "PLANOS DO DIA", "PEDIR"],
-    groups: ["VALIDADOR", "CATRACA", "CÂMERA", "TABLET", "G100", "SWITCH", "TELEMETRIA"],
+    status: '',
+    items: ["Fichas do dia", "Planos do dia", "Pedidos"],
+    groups: ["Validador", "Catraca", "Câmera", "Tablet", "G100", "Switch", "Telemetria"],
     busRules: [
       v => !!v || 'Carro é obrigatório',
       v => v.length <= 4 || 'Carro deve ter apenas 4 caracteres',
@@ -96,12 +98,14 @@ export default {
         bus.bus = this.bus;
         bus.categorie = this.categorie;
         bus.group = this.group;
+        bus.status = this.status;
 
         HttpRequestUtil.saveBushes(bus).then(response => {
           this.saved = response;
-          this.overlay = !this.overlay;
-          window.location.reload();
         });
+        
+        this.overlay = !this.overlay;
+        window.location.reload();
 
       } else {
         this.dialogErro = true;
