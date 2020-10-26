@@ -118,13 +118,13 @@
             </v-list-item-content>
           </template>
 
-          <v-list-item>
+          <v-list-item @click="changeCategorieFile(as)">
             <v-list-item-content>
               <v-list-item-title>Ficha</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           
-          <v-list-item>
+          <v-list-item @click="changeCategoriePlan(as)">
             <v-list-item-content>
               <v-list-item-title>Plano</v-list-item-title>
             </v-list-item-content>
@@ -197,7 +197,32 @@ export default {
           this.overlay = !this.overlay;
           window.location.reload();
         });
+      }
+    },
 
+    changeCategorieFile(bus) {
+      if (bus != "") {
+
+        bus.categorie = "Fichas do dia"
+
+        HttpRequestUtil.changeStatus(bus).then(response => {
+          console.log(response);
+          this.overlay = !this.overlay;
+          window.location.reload();
+        });
+      }
+    },
+
+    changeCategoriePlan(bus) {
+      if (bus != "") {
+
+        bus.categorie = "Planos do dia"
+
+        HttpRequestUtil.changeStatus(bus).then(response => {
+          console.log(response);
+          this.overlay = !this.overlay;
+          window.location.reload();
+        });
       }
     }
   },
