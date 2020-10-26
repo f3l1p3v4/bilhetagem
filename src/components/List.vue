@@ -179,10 +179,10 @@ export default {
 
         HttpRequestUtil.changeStatus(bus).then(response => {
           console.log(response.bus);
+          this.overlay = !this.overlay;
+          window.location.reload();
         });
 
-        this.overlay = !this.overlay;
-        window.location.reload();
       }
     },
 
@@ -193,10 +193,10 @@ export default {
 
         HttpRequestUtil.changeStatus(bus).then(response => {
           console.log(response);
+          this.overlay = !this.overlay;
+          window.location.reload();
         });
 
-        this.overlay = !this.overlay;
-        window.location.reload();
       }
     }
   },

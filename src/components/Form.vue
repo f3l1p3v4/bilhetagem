@@ -102,15 +102,13 @@ export default {
 
         HttpRequestUtil.saveBushes(bus).then(response => {
           this.saved = response;
+          this.overlay = !this.overlay;
+          window.location.reload();
         });
-        
-        this.overlay = !this.overlay;
-        window.location.reload();
 
       } else {
         this.dialogErro = true;
       }
-        this.clearFields();
     },
 
     validate() {
@@ -120,12 +118,6 @@ export default {
         return true;
       }
     },
-
-    clearFields() {
-      this.bus = "";
-      this.categorie = "";
-      this.group = "";
-    }
   },
   watch: {
     overlay (val) {
