@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-app-bar app dark color="primary">
-      <v-icon>mdi-bus-side</v-icon>
+      <div>
+        <v-img class="img" src="./assets/icon.png"></v-img>
+      </div>
       <span class="title ml-3 mr-5">
         Bilhetagem&nbsp;
         <span class="font-weight-light">Consórcio</span>
@@ -37,3 +39,9 @@ export default {
   })
 };
 </script>
+
+<style scoped>
+.img {
+  width: 30px;
+}
+</style>
