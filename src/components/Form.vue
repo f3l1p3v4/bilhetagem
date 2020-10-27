@@ -42,7 +42,7 @@
     <!-- Dialog de Erro nos campos-->
     <template>
         <v-row justify="center">
-            <v-dialog v-model="dialogErro" max-width="290">
+            <v-dialog v-model="dialogError" max-width="320">
                 <v-card class="text-center">
                 <v-icon color="info" size="36" class="mt-6">mdi-emoticon-sad</v-icon>
 
@@ -52,7 +52,28 @@
 
                 <v-card-actions>
 
-                  <v-btn color="info" style="margin: 0 auto" text @click="dialogErro = false">Continuar</v-btn>
+                  <v-btn color="info" style="margin: 0 auto" text @click="dialogError = false">Continuar</v-btn>
+
+                </v-card-actions>
+                </v-card>
+            </v-dialog>
+        </v-row>
+    </template>
+
+    <!-- Dialog de Erro repetição de dados-->
+    <template>
+        <v-row justify="center">
+            <v-dialog v-model="dialogRepeated" max-width="320">
+                <v-card class="text-center">
+                <v-icon color="info" size="36" class="mt-6">mdi-emoticon-sad</v-icon>
+
+                <v-card-title class="headline">Carro e defeito repetido!</v-card-title>
+
+                <v-card-text>Favor tente preencher com carro diferente!!!</v-card-text>
+
+                <v-card-actions>
+
+                  <v-btn color="info" style="margin: 0 auto" text @click="dialogRepeated = false">Continuar</v-btn>
 
                 </v-card-actions>
                 </v-card>
@@ -75,9 +96,12 @@ import HttpRequestUtil from "@/util/HttpRequestUtil";
 export default {
   data: () => ({
     valid: false,
-    dialogErro: false,
+    dialogError: false,
+    dialogRepeated: false,
+    repeated: false,
     saved: [],
     overlay: false,
+    busCurrent: [],
     bus: '',
     categorie: '',
     group: '',
@@ -106,17 +130,34 @@ export default {
           window.location.reload();
         });
 
-      } else {
-        this.dialogErro = true;
       }
     },
 
     validate() {
       if (this.bus == "" || this.categorie == "") {
+        this.dialogError = true;
         return false;
       } else {
-        return true;
+        
+        for(let i = 0; i < this.busCurrent.length; i++) {
+          if(this.bus == this.busCurrent[i].bus) {
+            this.repeated = true;
+          }
+        }
+
+        if(this.repeated) {
+          this.dialogRepeated = true;
+          return false;
+        } else {
+          return true;
+        }
+
       }
+    },
+    searchBushes() {
+      HttpRequestUtil.searchBushes().then(response => {
+        this.busCurrent = response;
+      });
     },
   },
   watch: {
@@ -126,5 +167,8 @@ export default {
       }, 5000)
     },
   },
+  mounted() {
+    this.searchBushes();
+  }
 };
 </script>

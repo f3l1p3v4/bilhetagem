@@ -4,7 +4,7 @@ export default {
   //Bushes
   async searchBushes() {
     return API_URL
-      .get("/bushes")
+      .get("/all")
       .then(response => response.data);
   },
 

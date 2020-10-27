@@ -12,6 +12,7 @@
     >
       <v-list>
         <v-subheader>FICHAS DO DIA</v-subheader>
+          <v-divider />
           <v-list-group
             v-for="(dayFile, i) in dayFiles"
             :key="i"
@@ -57,6 +58,7 @@
     >
       <v-list>
         <v-subheader>PLANOS DO DIA</v-subheader>
+        <v-divider />
         <v-list-group
           v-for="(dayPlan, i) in dayPlans"
           :key="i"
@@ -102,6 +104,7 @@
     >
       <v-list>
         <v-subheader>PEDIDOS</v-subheader>
+        <v-divider />
         <v-list-group
           v-for="(as, i) in ask"
           :key="i"
