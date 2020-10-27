@@ -140,7 +140,11 @@ export default {
       } else {
         
         for(let i = 0; i < this.busCurrent.length; i++) {
-          if(this.bus == this.busCurrent[i].bus) {
+          if(
+            this.bus == this.busCurrent[i].bus 
+            && this.categorie == this.busCurrent[i].categorie 
+            && this.group == this.busCurrent[i].group 
+            ) {
             this.repeated = true;
           }
         }
