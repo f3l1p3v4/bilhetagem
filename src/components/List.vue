@@ -42,6 +42,12 @@
                 <v-list-item-title>Finalizado</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+
+            <v-list-item @click="changeCategorieAsk(dayFile)">
+            <v-list-item-content>
+              <v-list-item-title>Pedir para amanhã</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
           </v-list-group>
       </v-list>
     </v-card>
@@ -203,6 +209,19 @@ export default {
       if (bus != "") {
 
         bus.categorie = "Fichas do dia"
+
+        HttpRequestUtil.changeStatus(bus).then(response => {
+          console.log(response);
+          this.overlay = !this.overlay;
+          window.location.reload();
+        });
+      }
+    },
+
+    changeCategorieAsk(bus) {
+      if (bus != "") {
+
+        bus.categorie = "Pedidos"
 
         HttpRequestUtil.changeStatus(bus).then(response => {
           console.log(response);
