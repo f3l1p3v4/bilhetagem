@@ -43,19 +43,14 @@
     <template>
         <v-row justify="center">
             <v-dialog v-model="dialogError" max-width="320">
-                <v-card class="text-center">
-                <v-icon color="info" size="36" class="mt-6">mdi-emoticon-sad</v-icon>
+              <v-card class="text-center">
+                <v-icon color="red" size="36" class="mt-6">mdi-emoticon-sad</v-icon>
 
                 <v-card-title class="headline">Ops algo deu errado!</v-card-title>
 
                 <v-card-text>Favor tente preencher todos os campos corretamente!!!</v-card-text>
 
-                <v-card-actions>
-
-                  <v-btn color="info" style="margin: 0 auto" text @click="dialogError = false">Continuar</v-btn>
-
-                </v-card-actions>
-                </v-card>
+              </v-card>
             </v-dialog>
         </v-row>
     </template>
@@ -63,20 +58,15 @@
     <!-- Dialog de Erro repetição de dados-->
     <template>
         <v-row justify="center">
-            <v-dialog v-model="dialogRepeated" max-width="320">
-                <v-card class="text-center">
-                <v-icon color="info" size="36" class="mt-6">mdi-emoticon-sad</v-icon>
+            <v-dialog v-model="dialogRepeated" max-width="350">
+              <v-card class="text-center">
+                <v-icon color="red" size="36" class="mt-6">mdi-emoticon-sad</v-icon>
 
                 <v-card-title class="headline">Carro com defeito repetido!</v-card-title>
 
                 <v-card-text>Favor tente preencher com carro ou defeito diferente!!!</v-card-text>
 
-                <v-card-actions>
-
-                  <v-btn color="info" style="margin: 0 auto" text @click="dialogRepeated = false">Continuar</v-btn>
-
-                </v-card-actions>
-                </v-card>
+              </v-card>
             </v-dialog>
         </v-row>
     </template>
@@ -136,6 +126,7 @@ export default {
     validate() {
       if (this.bus == "" || this.categorie == "") {
         this.dialogError = true;
+        this.dialogTime();
         return false;
       } else {
         
@@ -151,6 +142,8 @@ export default {
 
         if(this.repeated) {
           this.dialogRepeated = true;
+          this.dialogTime();
+          
           return false;
         } else {
           return true;
@@ -163,11 +156,18 @@ export default {
         this.busCurrent = response;
       });
     },
+    dialogTime () {
+      setTimeout(() => {
+        this.dialogError = false;
+        this.dialogRepeated = false;
+      }, 4000)
+    },
   },
   watch: {
     overlay (val) {
       val && setTimeout(() => {
-        this.overlay = false
+        this.overlay = false;
+        this.dialogRepeated = false;
       }, 5000)
     },
   },
