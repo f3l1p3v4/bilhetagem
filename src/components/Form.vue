@@ -67,9 +67,9 @@
                 <v-card class="text-center">
                 <v-icon color="info" size="36" class="mt-6">mdi-emoticon-sad</v-icon>
 
-                <v-card-title class="headline">Carro e defeito repetido!</v-card-title>
+                <v-card-title class="headline">Carro com defeito repetido!</v-card-title>
 
-                <v-card-text>Favor tente preencher com carro diferente!!!</v-card-text>
+                <v-card-text>Favor tente preencher com carro ou defeito diferente!!!</v-card-text>
 
                 <v-card-actions>
 
