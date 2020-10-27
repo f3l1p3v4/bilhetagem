@@ -7,7 +7,6 @@ export default {
       .get("/all")
       .then(response => response.data);
   },
-
   async saveBushes(bus) {
     return API_URL
       .post("/bushes", bus)
