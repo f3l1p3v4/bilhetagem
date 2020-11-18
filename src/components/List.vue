@@ -1,14 +1,14 @@
 <template>
-<v-row>
+<v-row style="width: 100%; max-width: 1400px; margin: 0 auto;">
   <v-col
     cols="12"
     md="4"
   >
     <v-card
-      class="mx-auto rounded"
-      max-width="300"
-      tile
-      elevation="11"
+      class="mx-auto"
+      max-width="350"
+      rounded="lg"
+      flat
     >
       <v-list>
         <v-subheader>FICHAS DO DIA</v-subheader>
@@ -57,10 +57,10 @@
     md="4"
   >
     <v-card
-      class="mx-auto rounded"
-      max-width="300"
-      tile
-      elevation="11"
+      class="mx-auto"
+      max-width="350"
+      rounded="lg"
+      flat
     >
       <v-list>
         <v-subheader>PLANOS DO DIA</v-subheader>
@@ -103,10 +103,10 @@
     md="4"
   >
     <v-card
-      class="mx-auto rounded"
-      max-width="300"
-      tile
-      elevation="11"
+      class="mx-auto"
+      max-width="350"
+      rounded="lg"
+      flat
     >
       <v-list>
         <v-subheader>PEDIDOS</v-subheader>

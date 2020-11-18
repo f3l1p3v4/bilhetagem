@@ -1,5 +1,8 @@
 <template>
-  <v-form v-model="valid">
+  <v-form 
+    v-model="valid" 
+    style="width: 100%; max-width: 1400px; margin: 0 auto;" 
+  >
     <v-container>
       <v-row>
         <v-col
@@ -17,7 +20,7 @@
 
         <v-col
           cols="12"
-          md="4"
+        md="4"
         >
           <v-select :items="items" label="Categoria" v-model="categorie"></v-select>
         </v-col>

@@ -1,16 +1,63 @@
 <template>
-  <v-app>
-    <v-app-bar app dark color="primary">
-      <div>
-        <v-img class="img" src="./assets/icon.png"></v-img>
-      </div>
+  <v-app id="inspire">
+    <v-navigation-drawer
+      app 
+      clipped 
+      permanent
+      expand-on-hover
+    >
+      <v-list dense nav>
+          <v-list-item class="px-2">
+            <v-list-item-avatar color="primary" size="28">
+              <v-icon dark>
+               mdi-account
+              </v-icon>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title class="title">
+                Felipe Valdez
+              </v-list-item-title>
+              <v-list-item-subtitle>Bilhetagem</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+
+        <v-divider></v-divider>
+
+        <v-list
+          nav
+          dense
+        >
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon>mdi-folder</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>My Files</v-list-item-title>
+          </v-list-item>
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon>mdi-account-multiple</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Shared with me</v-list-item-title>
+          </v-list-item>
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon>mdi-star</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Starred</v-list-item-title>
+          </v-list-item>
+        </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar app dark clipped-left color="primary">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <span class="title ml-3 mr-5">
         Bilhetagem&nbsp;
         <span class="font-weight-light">Consórcio</span>
       </span>
     </v-app-bar>
 
-    <v-main style="width: 100%; max-width: 1400px; margin: 0 auto;">
+    <v-main class="blue-grey lighten-5">
       <Form />
       <List />
     </v-main>
@@ -28,20 +75,36 @@
 import Form from './components/Form';
 import List from './components/List';
 
-export default {
-  name: 'App',
-  components: {
-    Form,
-    List
-  },
-  data: () => ({
-    //
-  })
-};
+  export default {
+    components: {
+      Form,
+      List
+    },
+    data: () => ({
+      drawer: null,
+      links: [
+        'Dashboard',
+        'Messages',
+        'Profile',
+        'Updates',
+      ],
+      items: [
+      {
+        title: "Home",
+        icon: "mdi-home",
+        route: "/"
+      },
+      {
+        title: "Usuários",
+        icon: "mdi-account",
+        route: "/users"
+      },
+      {
+        title: "Produtos",
+        icon: "mdi-archive",
+        route: "/products"
+      },
+    ]
+    }),
+  }
 </script>
-
-<style scoped>
-.img {
-  width: 30px;
-}
-</style>
