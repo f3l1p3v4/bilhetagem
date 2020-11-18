@@ -50,7 +50,7 @@
     </v-navigation-drawer>
 
     <v-app-bar app dark clipped-left color="primary">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-icon>mdi-bus-multiple</v-icon>
       <span class="title ml-3 mr-5">
         Bilhetagem&nbsp;
         <span class="font-weight-light">Consórcio</span>
