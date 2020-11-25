@@ -18,6 +18,7 @@
                 Felipe Valdez
               </v-list-item-title>
               <v-list-item-subtitle>Bilhetagem</v-list-item-subtitle>
+              
             </v-list-item-content>
           </v-list-item>
         </v-list>
