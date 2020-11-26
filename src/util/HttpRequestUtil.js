@@ -26,4 +26,14 @@ export default {
       .put("/bushes", bus)
       .then(response => response.data);
   },
+  async changeBus(bus) {
+    return API_URL
+      .put("/bus", bus)
+      .then(response => response.data);
+  },
+  async deleteBus(busID) {
+    return API_URL
+      .delete(`/bushes/${busID}`)
+      .then(response => response.data);
+  },
 };

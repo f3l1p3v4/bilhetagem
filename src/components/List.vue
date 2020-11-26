@@ -12,43 +12,108 @@
     >
       <v-list>
         <v-subheader>FICHAS DO DIA</v-subheader>
-          <v-divider />
-          <v-list-group
+        
+        <v-divider />
+
+        <v-list-item-group>
+
+          <v-list-item
             v-for="(dayFile, i) in dayFiles"
             :key="i"
-            color="grey darken-2"
           >
-            <template v-slot:activator>
-              <v-list-item-icon>
-                <v-icon v-if="dayFile.status === 'finalizado'" color="green">mdi-bus-side</v-icon>
-                <v-icon v-else-if="dayFile.status === 'execução'" color="primary">mdi-bus-side</v-icon>
-                <v-icon v-else>mdi-bus-side</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title v-if="dayFile.status === 'finalizado'" :class="`green--text`" v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
-                <v-list-item-title v-else-if="dayFile.status === 'execução'" :class="`primary--text`" v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
-                <v-list-item-title v-else v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
-              </v-list-item-content>
-            </template>
-
-            <v-list-item @click="changeExecution(dayFile)">
-              <v-list-item-content>
-                <v-list-item-title>Execução</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            
-            <v-list-item @click="changeFinished(dayFile)">
-              <v-list-item-content>
-                <v-list-item-title>Finalizado</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-
-            <v-list-item @click="changeCategorieAsk(dayFile)">
+            <v-list-item-icon>
+              <v-icon v-if="dayFile.status === 'finalizado'" color="green">mdi-bus-side</v-icon>
+              <v-icon v-else-if="dayFile.status === 'execução'" color="primary">mdi-bus-side</v-icon>
+              <v-icon v-else>mdi-bus-side</v-icon>
+            </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>Pedir para amanhã</v-list-item-title>
+              <v-list-item-title v-if="dayFile.status === 'finalizado'" :class="`green--text`" v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
+              <v-list-item-title v-else-if="dayFile.status === 'execução'" :class="`primary--text`" v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
+              <v-list-item-title v-else v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
             </v-list-item-content>
+
+
+            <v-spacer></v-spacer>
+
+            <v-menu
+              bottom
+              left
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  icon
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+              </template>
+
+            <v-list>
+
+              <v-list-item
+                @click="changeExecution(dayFile)"
+              >
+                <v-list-item-content>
+                  <v-list-item-title>Executar</v-list-item-title>
+                </v-list-item-content>
+
+                <v-list-item-icon>
+                  <v-icon>mdi-clock-time-four</v-icon>
+                </v-list-item-icon>
+              </v-list-item>
+
+              <v-list-item
+                @click="changeFinished(dayFile)"
+              >
+                <v-list-item-content>
+                  <v-list-item-title>Finalizar</v-list-item-title>
+                </v-list-item-content>
+
+                <v-list-item-icon>
+                  <v-icon>mdi-check-bold</v-icon>
+                </v-list-item-icon>
+              </v-list-item>
+
+               <!-- <v-list-item
+                  @click="edit(dayFile)"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Editar</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-list-item-icon>
+                    <v-icon>mdi-pencil</v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+                -->
+                <v-list-item
+                  @click="remove(dayFile)"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Excluir</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-list-item-icon>
+                    <v-icon>mdi-delete-empty</v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+
+                                                <v-list-item
+                  @click="changeCategorieAsk(dayFile)"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Pedir</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-list-item-icon>
+                    <v-icon>mdi-swap-horizontal-bold</v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+              </v-list>
+            </v-menu>
           </v-list-item>
-          </v-list-group>
+        </v-list-item-group>
       </v-list>
     </v-card>
   </v-col>
@@ -65,12 +130,13 @@
       <v-list>
         <v-subheader>PLANOS DO DIA</v-subheader>
         <v-divider />
-        <v-list-group
-          v-for="(dayPlan, i) in dayPlans"
-          :key="i"
-          color="grey darken-2"
-        >
-          <template v-slot:activator>
+
+            <v-list-item-group>
+
+          <v-list-item
+            v-for="(dayPlan, i) in dayPlans"
+            :key="i"
+          >
             <v-list-item-icon>
               <v-icon v-if="dayPlan.status === 'finalizado'" color="green">mdi-bus-side</v-icon>
               <v-icon v-else-if="dayPlan.status === 'execução'" color="primary">mdi-bus-side</v-icon>
@@ -81,20 +147,77 @@
               <v-list-item-title v-else-if="dayPlan.status === 'execução'" :class="`primary--text`" v-text="`${dayPlan.bus}`"></v-list-item-title>
               <v-list-item-title v-else v-text="`${dayPlan.bus}`"></v-list-item-title>
             </v-list-item-content>
-          </template>
 
-          <v-list-item @click="changeExecution(dayPlan)">
-            <v-list-item-content>
-              <v-list-item-title>Execução</v-list-item-title>
-            </v-list-item-content>
+
+            <v-spacer></v-spacer>
+
+            <v-menu
+              bottom
+              left
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  icon
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+              </template>
+
+            <v-list>
+
+              <v-list-item
+                @click="changeExecution(dayPlan)"
+              >
+                <v-list-item-content>
+                  <v-list-item-title>Executar</v-list-item-title>
+                </v-list-item-content>
+
+                <v-list-item-icon>
+                  <v-icon>mdi-clock-time-four</v-icon>
+                </v-list-item-icon>
+              </v-list-item>
+
+              <v-list-item
+                @click="changeFinished(dayPlan)"
+              >
+                <v-list-item-content>
+                  <v-list-item-title>Finalizar</v-list-item-title>
+                </v-list-item-content>
+
+                <v-list-item-icon>
+                  <v-icon>mdi-check-bold</v-icon>
+                </v-list-item-icon>
+              </v-list-item>
+
+               <!-- <v-list-item
+                  @click="edit(dayPlan)"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Editar</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-list-item-icon>
+                    <v-icon>mdi-pencil</v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+                -->
+                <v-list-item
+                  @click="remove(dayPlan)"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Excluir</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-list-item-icon>
+                    <v-icon>mdi-delete-empty</v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+              </v-list>
+            </v-menu>
           </v-list-item>
-          
-          <v-list-item @click="changeFinished(dayPlan)">
-            <v-list-item-content>
-              <v-list-item-title>Finalizado</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
+        </v-list-item-group>
       </v-list>
     </v-card>
   </v-col>
@@ -111,30 +234,69 @@
       <v-list>
         <v-subheader>PEDIDOS</v-subheader>
         <v-divider />
-        <v-list-group
-          v-for="(as, i) in ask"
-          :key="i"
-          color="grey darken-2"
-        >
-          <template v-slot:activator>
+   <v-list-item-group>
+
+          <v-list-item
+            v-for="(a, i) in ask"
+            :key="i"
+          >
             <v-list-item-icon>
-              <v-icon v-if="as.status === 'finalizado'" color="green">mdi-bus-side</v-icon>
-              <v-icon v-else-if="as.status === 'execução'" color="primary">mdi-bus-side</v-icon>
+              <v-icon v-if="a.status === 'finalizado'" color="green">mdi-bus-side</v-icon>
+              <v-icon v-else-if="a.status === 'execução'" color="primary">mdi-bus-side</v-icon>
               <v-icon v-else>mdi-bus-side</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title v-if="as.status === 'finalizado'" :class="`green--text`" v-text="`${as.bus} - ${as.group}`"></v-list-item-title>
-              <v-list-item-title v-else-if="as.status === 'execução'" :class="`primary--text`" v-text="`${as.bus} - ${as.group}`"></v-list-item-title>
-              <v-list-item-title v-else v-text="`${as.bus} - ${as.group}`"></v-list-item-title>
+              <v-list-item-title v-if="a.status === 'finalizado'" :class="`green--text`" v-text="`${a.bus} - ${a.group}`"></v-list-item-title>
+              <v-list-item-title v-else-if="a.status === 'execução'" :class="`primary--text`" v-text="`${a.bus} - ${a.group}`"></v-list-item-title>
+              <v-list-item-title v-else v-text="`${a.bus} - ${a.group}`"></v-list-item-title>
             </v-list-item-content>
-          </template>
 
-          <v-list-item @click="changeCategorieFile(as)">
-            <v-list-item-content>
-              <v-list-item-title>Ficha</v-list-item-title>
-            </v-list-item-content>
+
+            <v-spacer></v-spacer>
+
+            <v-menu
+              bottom
+              left
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  icon
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+              </template>
+
+            <v-list>
+
+                <v-list-item
+                  @click="remove(a)"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Excluir</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-list-item-icon>
+                    <v-icon>mdi-delete-empty</v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+
+                                <v-list-item
+                  @click="changeCategorieFile(a)"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Ficha</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-list-item-icon>
+                    <v-icon>mdi-swap-horizontal-bold</v-icon>
+                  </v-list-item-icon>
+                </v-list-item>
+              </v-list>
+            </v-menu>
           </v-list-item>
-        </v-list-group>
+        </v-list-item-group>
       </v-list>
     </v-card>
   </v-col>
@@ -157,7 +319,14 @@ export default {
     busCurrent: "",
     dayFiles: [],
     dayPlans: [],
-    ask: []
+    ask: [],
+    selectedItem: 0,
+    busEdit: null,
+    itemss: [
+      { text: '4252', icon: 'mdi-bus-side' },
+      { text: '4245', icon: 'mdi-bus-side' },
+      { text: '4222', icon: 'mdi-bus-side' },
+    ],
   }),
   methods: {
     searchDayFiles() {
@@ -204,6 +373,23 @@ export default {
         });
       }
     },
+
+    remove(bus) {
+      HttpRequestUtil.deleteBus(bus._id).then(response => {
+        console.log(response)
+        window.location.reload();
+      });
+    },
+
+    //edit(bus) {
+     // this.busEdit = bus;
+
+     // HttpRequestUtil.changeStatus(bus).then(response => {
+     //   console.log(response);
+     //   this.overlay = !this.overlay;
+     //   window.location.reload();
+     // });
+    //},
 
     changeCategorieFile(bus) {
       if (bus != "") {
