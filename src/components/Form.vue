@@ -1,7 +1,7 @@
 <template>
   <v-form 
     v-model="valid" 
-    style="width: 100%; max-width: 1400px; margin: 0 auto;" 
+    style="width: 100%; max-width: 1200px; margin: 0 auto;" 
   >
     <v-container>
       <v-row>

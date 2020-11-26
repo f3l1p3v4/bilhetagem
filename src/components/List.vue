@@ -1,12 +1,12 @@
 <template>
-<v-row style="width: 100%; max-width: 1400px; margin: 0 auto;">
+<v-row style="width: 100%; max-width: 1200px; margin: 0 auto;">
   <v-col
     cols="12"
     md="4"
   >
     <v-card
       class="mx-auto"
-      max-width="350"
+      max-width="300"
       rounded="lg"
       flat
     >
@@ -32,8 +32,7 @@
               <v-list-item-title v-else v-text="`${dayFile.bus} - ${dayFile.group}`"></v-list-item-title>
             </v-list-item-content>
 
-
-            <v-spacer></v-spacer>
+           <!-- <v-spacer></v-spacer> -->
 
             <v-menu
               bottom
@@ -99,7 +98,7 @@
                   </v-list-item-icon>
                 </v-list-item>
 
-                                                <v-list-item
+                <v-list-item
                   @click="changeCategorieAsk(dayFile)"
                 >
                   <v-list-item-content>
@@ -123,7 +122,7 @@
   >
     <v-card
       class="mx-auto"
-      max-width="350"
+      max-width="300"
       rounded="lg"
       flat
     >
@@ -149,7 +148,7 @@
             </v-list-item-content>
 
 
-            <v-spacer></v-spacer>
+           <!-- <v-spacer></v-spacer> -->
 
             <v-menu
               bottom
@@ -227,7 +226,7 @@
   >
     <v-card
       class="mx-auto"
-      max-width="350"
+      max-width="300"
       rounded="lg"
       flat
     >
@@ -252,7 +251,7 @@
             </v-list-item-content>
 
 
-            <v-spacer></v-spacer>
+           <!-- <v-spacer></v-spacer> -->
 
             <v-menu
               bottom
