@@ -52,6 +52,7 @@
 
               <v-list-item
                 @click="changeExecution(dayFile)"
+                style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
                   <v-list-item-title>Executar</v-list-item-title>
@@ -64,6 +65,7 @@
 
               <v-list-item
                 @click="changeFinished(dayFile)"
+                style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
                   <v-list-item-title>Finalizar</v-list-item-title>
@@ -88,6 +90,7 @@
                 -->
                 <v-list-item
                   @click="remove(dayFile)"
+                  style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
                     <v-list-item-title>Excluir</v-list-item-title>
@@ -100,6 +103,7 @@
 
                 <v-list-item
                   @click="changeCategorieAsk(dayFile)"
+                  style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
                     <v-list-item-title>Pedir</v-list-item-title>
@@ -168,6 +172,7 @@
 
               <v-list-item
                 @click="changeExecution(dayPlan)"
+                style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
                   <v-list-item-title>Executar</v-list-item-title>
@@ -180,6 +185,7 @@
 
               <v-list-item
                 @click="changeFinished(dayPlan)"
+                style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
                   <v-list-item-title>Finalizar</v-list-item-title>
@@ -204,6 +210,7 @@
                 -->
                 <v-list-item
                   @click="remove(dayPlan)"
+                  style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
                     <v-list-item-title>Excluir</v-list-item-title>
@@ -271,6 +278,7 @@
 
                 <v-list-item
                   @click="remove(a)"
+                  style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
                     <v-list-item-title>Excluir</v-list-item-title>
@@ -281,8 +289,9 @@
                   </v-list-item-icon>
                 </v-list-item>
 
-                                <v-list-item
+                <v-list-item
                   @click="changeCategorieFile(a)"
+                  style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
                     <v-list-item-title>Ficha</v-list-item-title>
