@@ -59,7 +59,7 @@
                 </v-list-item-content>
 
                 <v-list-item-icon>
-                  <v-icon>mdi-clock-time-four</v-icon>
+                  <v-icon>mdi-clock-time-four-outline</v-icon>
                 </v-list-item-icon>
               </v-list-item>
 
@@ -72,7 +72,7 @@
                 </v-list-item-content>
 
                 <v-list-item-icon>
-                  <v-icon>mdi-check-bold</v-icon>
+                  <v-icon>mdi-check</v-icon>
                 </v-list-item-icon>
               </v-list-item>
 
@@ -97,7 +97,7 @@
                   </v-list-item-content>
 
                   <v-list-item-icon>
-                    <v-icon>mdi-delete-empty</v-icon>
+                    <v-icon>mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
 
@@ -110,7 +110,7 @@
                   </v-list-item-content>
 
                   <v-list-item-icon>
-                    <v-icon>mdi-swap-horizontal-bold</v-icon>
+                    <v-icon>mdi-swap-horizontal</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
               </v-list>
@@ -179,7 +179,7 @@
                 </v-list-item-content>
 
                 <v-list-item-icon>
-                  <v-icon>mdi-clock-time-four</v-icon>
+                  <v-icon>mdi-clock-time-four-outline</v-icon>
                 </v-list-item-icon>
               </v-list-item>
 
@@ -192,7 +192,7 @@
                 </v-list-item-content>
 
                 <v-list-item-icon>
-                  <v-icon>mdi-check-bold</v-icon>
+                  <v-icon>mdi-check</v-icon>
                 </v-list-item-icon>
               </v-list-item>
 
@@ -217,7 +217,7 @@
                   </v-list-item-content>
 
                   <v-list-item-icon>
-                    <v-icon>mdi-delete-empty</v-icon>
+                    <v-icon>mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
               </v-list>
@@ -285,7 +285,7 @@
                   </v-list-item-content>
 
                   <v-list-item-icon>
-                    <v-icon>mdi-delete-empty</v-icon>
+                    <v-icon>mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
 
@@ -298,7 +298,7 @@
                   </v-list-item-content>
 
                   <v-list-item-icon>
-                    <v-icon>mdi-swap-horizontal-bold</v-icon>
+                    <v-icon>mdi-swap-horizontal</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
               </v-list>
