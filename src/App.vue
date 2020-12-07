@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
+   <!-- <v-navigation-drawer
       app 
       clipped 
       permanent
@@ -47,7 +47,7 @@
             <v-list-item-title>Starred</v-list-item-title>
           </v-list-item>
         </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
 
     <v-app-bar app dark clipped-left color="#2b3137">
       <v-icon>mdi-bus-multiple</v-icon>
