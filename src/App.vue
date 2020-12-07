@@ -57,7 +57,7 @@
       </span>
     </v-app-bar>
 
-    <v-main class="blue-grey lighten-5">
+    <v-main class="blue-grey lighten-5 mb-10">
       <Form />
       <List />
     </v-main>
