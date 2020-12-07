@@ -58,7 +58,7 @@
                   <v-list-item-title>Executar</v-list-item-title>
                 </v-list-item-content>
 
-                <v-list-item-icon>
+                <v-list-item-icon style="margin: auto 5px">
                   <v-icon>mdi-clock-time-four-outline</v-icon>
                 </v-list-item-icon>
               </v-list-item>
@@ -71,7 +71,7 @@
                   <v-list-item-title>Finalizar</v-list-item-title>
                 </v-list-item-content>
 
-                <v-list-item-icon>
+                <v-list-item-icon style="margin: auto 5px">
                   <v-icon>mdi-check</v-icon>
                 </v-list-item-icon>
               </v-list-item>
@@ -96,7 +96,7 @@
                     <v-list-item-title>Excluir</v-list-item-title>
                   </v-list-item-content>
 
-                  <v-list-item-icon>
+                  <v-list-item-icon style="margin: auto 5px">
                     <v-icon>mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
@@ -109,7 +109,7 @@
                     <v-list-item-title>Pedir</v-list-item-title>
                   </v-list-item-content>
 
-                  <v-list-item-icon>
+                  <v-list-item-icon style="margin: auto 5px">
                     <v-icon>mdi-swap-horizontal</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
@@ -178,7 +178,7 @@
                   <v-list-item-title>Executar</v-list-item-title>
                 </v-list-item-content>
 
-                <v-list-item-icon>
+                <v-list-item-icon style="margin: auto 5px">
                   <v-icon>mdi-clock-time-four-outline</v-icon>
                 </v-list-item-icon>
               </v-list-item>
@@ -191,7 +191,7 @@
                   <v-list-item-title>Finalizar</v-list-item-title>
                 </v-list-item-content>
 
-                <v-list-item-icon>
+                <v-list-item-icon style="margin: auto 5px">
                   <v-icon>mdi-check</v-icon>
                 </v-list-item-icon>
               </v-list-item>
@@ -216,7 +216,7 @@
                     <v-list-item-title>Excluir</v-list-item-title>
                   </v-list-item-content>
 
-                  <v-list-item-icon>
+                  <v-list-item-icon style="margin: auto 5px">
                     <v-icon>mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
@@ -284,7 +284,7 @@
                     <v-list-item-title>Excluir</v-list-item-title>
                   </v-list-item-content>
 
-                  <v-list-item-icon>
+                  <v-list-item-icon style="margin: auto 5px">
                     <v-icon>mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
@@ -297,7 +297,7 @@
                     <v-list-item-title>Ficha</v-list-item-title>
                   </v-list-item-content>
 
-                  <v-list-item-icon>
+                  <v-list-item-icon style="margin: auto 5px">
                     <v-icon>mdi-swap-horizontal</v-icon>
                   </v-list-item-icon>
                 </v-list-item>

@@ -37,7 +37,7 @@
           md="1"
           style="margin: auto"
         >
-          <v-btn color="info" @click="toSave">Salvar</v-btn>
+          <v-btn color="#2ebc4f" dark @click="toSave">Salvar</v-btn>
         </v-col>
       </v-row>
     </v-container>

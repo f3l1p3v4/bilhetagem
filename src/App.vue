@@ -8,7 +8,7 @@
     >
       <v-list dense nav>
           <v-list-item class="px-2">
-            <v-list-item-avatar color="primary" size="28">
+            <v-list-item-avatar color="#2b3137" size="28">
               <v-icon dark>
                mdi-account
               </v-icon>
@@ -49,7 +49,7 @@
         </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app dark clipped-left color="primary">
+    <v-app-bar app dark clipped-left color="#2b3137">
       <v-icon>mdi-bus-multiple</v-icon>
       <span class="title ml-3 mr-5">
         Bilhetagem&nbsp;
