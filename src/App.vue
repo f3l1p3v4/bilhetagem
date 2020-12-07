@@ -62,7 +62,7 @@
       <List />
     </v-main>
 
-    <v-footer app>
+    <v-footer>
       <v-col class="text-center">
         &copy; 2020/{{ new Date().getFullYear() }} — Copyright. Site desenvolvido por
         <strong>Felipe Valdez 🚀</strong>
