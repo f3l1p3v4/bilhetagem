@@ -99,8 +99,8 @@ export default {
     categorie: '',
     group: '',
     status: '',
-    items: ["Fichas do dia", "Planos do dia", "Pedidos"],
-    groups: ["Validador", "Catraca", "Câmera", "Tablet", "G100", "Filmagem", "Switch", "Telemetria"],
+    items: [" ", "Fichas do dia", "Planos do dia", "Pedidos"],
+    groups: [" ", "Validador", "Catraca", "Câmera", "Tablet", "G100", "Filmagem", "Switch", "Telemetria", "Itinerário", "Tacógrafo"],
     busRules: [
       v => !!v || 'Carro é obrigatório',
       v => v.length <= 4 || 'Carro deve ter apenas 4 caracteres',
