@@ -1,10 +1,9 @@
 <template>
   <v-app id="inspire">
-   <!-- <v-navigation-drawer
+   <v-navigation-drawer
       app 
-      clipped 
-      permanent
-      expand-on-hover
+      clipped
+      v-model="drawer"
     >
       <v-list dense nav>
           <v-list-item class="px-2">
@@ -47,10 +46,10 @@
             <v-list-item-title>Starred</v-list-item-title>
           </v-list-item>
         </v-list>
-    </v-navigation-drawer> -->
+    </v-navigation-drawer>
 
     <v-app-bar app dark clipped-left color="#2b3137">
-      <v-icon>mdi-bus-multiple</v-icon>
+       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <span class="title ml-3 mr-5">
         Bilhetagem&nbsp;
         <span class="font-weight-light">Consórcio</span>
