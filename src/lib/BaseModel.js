@@ -1,6 +1,6 @@
 import api from '../services/api';
 import { modelFactory } from './Common';
-import Constant from './Constants';
+import Constants from './Constants';
 
 export default class Basemodel {
     constructor (data = null, singularResourceName, pluralResourceName) {
