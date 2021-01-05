@@ -6,9 +6,9 @@
   >
     <v-card
       class="mx-auto"
+      style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
       max-width="300"
       rounded="lg"
-      flat
     >
       <v-list>
         <v-subheader>FICHAS DO DIA</v-subheader>
@@ -44,7 +44,7 @@
                   v-bind="attrs"
                   v-on="on"
                 >
-                  <v-icon>mdi-dots-vertical</v-icon>
+                  <v-icon size="20">mdi-dots-vertical</v-icon>
                 </v-btn>
               </template>
 
@@ -84,7 +84,7 @@
                   </v-list-item-content>
 
                   <v-list-item-icon>
-                    <v-icon>mdi-pencil</v-icon>
+                    <v-icon size="20">mdi-pencil</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
                 -->
@@ -128,7 +128,7 @@
       class="mx-auto"
       max-width="300"
       rounded="lg"
-      flat
+      style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
     >
       <v-list>
         <v-subheader>PLANOS DO DIA</v-subheader>
@@ -164,7 +164,7 @@
                   v-bind="attrs"
                   v-on="on"
                 >
-                  <v-icon>mdi-dots-vertical</v-icon>
+                  <v-icon size="20">mdi-dots-vertical</v-icon>
                 </v-btn>
               </template>
 
@@ -175,11 +175,11 @@
                 style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
-                  <v-list-item-title>Executar</v-list-item-title>
+                  <v-list-item-title class="subtitle-2 grey--text text--darken-1">Executar</v-list-item-title>
                 </v-list-item-content>
 
                 <v-list-item-icon style="margin: auto 5px">
-                  <v-icon>mdi-clock-time-four-outline</v-icon>
+                  <v-icon size="20">mdi-clock-time-four-outline</v-icon>
                 </v-list-item-icon>
               </v-list-item>
 
@@ -188,11 +188,11 @@
                 style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
-                  <v-list-item-title>Finalizar</v-list-item-title>
+                  <v-list-item-title class="subtitle-2 grey--text text--darken-1">Finalizar</v-list-item-title>
                 </v-list-item-content>
 
                 <v-list-item-icon style="margin: auto 5px">
-                  <v-icon>mdi-check</v-icon>
+                  <v-icon size="20">mdi-check</v-icon>
                 </v-list-item-icon>
               </v-list-item>
 
@@ -204,7 +204,7 @@
                   </v-list-item-content>
 
                   <v-list-item-icon>
-                    <v-icon>mdi-pencil</v-icon>
+                    <v-icon size="20">mdi-pencil</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
                 -->
@@ -213,11 +213,11 @@
                   style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
-                    <v-list-item-title>Excluir</v-list-item-title>
+                    <v-list-item-title class="subtitle-2 grey--text text--darken-1">Excluir</v-list-item-title>
                   </v-list-item-content>
 
                   <v-list-item-icon style="margin: auto 5px">
-                    <v-icon>mdi-delete-empty-outline</v-icon>
+                    <v-icon size="20">mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
               </v-list>
@@ -235,7 +235,7 @@
       class="mx-auto"
       max-width="300"
       rounded="lg"
-      flat
+      style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
     >
       <v-list>
         <v-subheader>PEDIDOS</v-subheader>
@@ -270,7 +270,7 @@
                   v-bind="attrs"
                   v-on="on"
                 >
-                  <v-icon>mdi-dots-vertical</v-icon>
+                  <v-icon size="20">mdi-dots-vertical</v-icon>
                 </v-btn>
               </template>
 
@@ -281,11 +281,11 @@
                   style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
-                    <v-list-item-title>Excluir</v-list-item-title>
+                    <v-list-item-title class="subtitle-2 grey--text text--darken-1">Excluir</v-list-item-title>
                   </v-list-item-content>
 
                   <v-list-item-icon style="margin: auto 5px">
-                    <v-icon>mdi-delete-empty-outline</v-icon>
+                    <v-icon size="20">mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
 
@@ -294,11 +294,11 @@
                   style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
-                    <v-list-item-title>Ficha</v-list-item-title>
+                    <v-list-item-title class="subtitle-2 grey--text text--darken-1">Ficha</v-list-item-title>
                   </v-list-item-content>
 
                   <v-list-item-icon style="margin: auto 5px">
-                    <v-icon>mdi-swap-horizontal</v-icon>
+                    <v-icon size="20">mdi-swap-horizontal</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
               </v-list>
