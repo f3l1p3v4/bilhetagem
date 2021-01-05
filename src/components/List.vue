@@ -55,7 +55,7 @@
                 style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
-                  <v-list-item-title class="subtitle-2 grey--text text--darken-2">Executar</v-list-item-title>
+                  <v-list-item-title class="subtitle-2 grey--text text--darken-1">Executar</v-list-item-title>
                 </v-list-item-content>
 
                 <v-list-item-icon style="margin: auto 5px">
@@ -68,7 +68,7 @@
                 style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
-                  <v-list-item-title class="subtitle-2 grey--text text--darken-2">Finalizar</v-list-item-title>
+                  <v-list-item-title class="subtitle-2 grey--text text--darken-1">Finalizar</v-list-item-title>
                 </v-list-item-content>
 
                 <v-list-item-icon style="margin: auto 5px">
@@ -93,7 +93,7 @@
                   style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
-                    <v-list-item-title class="subtitle-2 grey--text text--darken-2">Excluir</v-list-item-title>
+                    <v-list-item-title class="subtitle-2 grey--text text--darken-1">Excluir</v-list-item-title>
                   </v-list-item-content>
 
                   <v-list-item-icon style="margin: auto 5px">
@@ -106,7 +106,7 @@
                   style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
-                    <v-list-item-title class="subtitle-2 grey--text text--darken-2">Pedir</v-list-item-title>
+                    <v-list-item-title class="subtitle-2 grey--text text--darken-1">Pedir</v-list-item-title>
                   </v-list-item-content>
 
                   <v-list-item-icon style="margin: auto 5px">
