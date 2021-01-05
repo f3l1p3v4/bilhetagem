@@ -55,11 +55,11 @@
                 style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
-                  <v-list-item-title>Executar</v-list-item-title>
+                  <v-list-item-title class="subtitle-2 grey--text text--darken-2">Executar</v-list-item-title>
                 </v-list-item-content>
 
                 <v-list-item-icon style="margin: auto 5px">
-                  <v-icon>mdi-clock-time-four-outline</v-icon>
+                  <v-icon size="20">mdi-clock-time-four-outline</v-icon>
                 </v-list-item-icon>
               </v-list-item>
 
@@ -68,11 +68,11 @@
                 style="padding: 0 10px; height: 10px"
               >
                 <v-list-item-content>
-                  <v-list-item-title>Finalizar</v-list-item-title>
+                  <v-list-item-title class="subtitle-2 grey--text text--darken-2">Finalizar</v-list-item-title>
                 </v-list-item-content>
 
                 <v-list-item-icon style="margin: auto 5px">
-                  <v-icon>mdi-check</v-icon>
+                  <v-icon size="20">mdi-check</v-icon>
                 </v-list-item-icon>
               </v-list-item>
 
@@ -93,11 +93,11 @@
                   style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
-                    <v-list-item-title>Excluir</v-list-item-title>
+                    <v-list-item-title class="subtitle-2 grey--text text--darken-2">Excluir</v-list-item-title>
                   </v-list-item-content>
 
                   <v-list-item-icon style="margin: auto 5px">
-                    <v-icon>mdi-delete-empty-outline</v-icon>
+                    <v-icon size="20">mdi-delete-empty-outline</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
 
@@ -106,11 +106,11 @@
                   style="padding: 0 10px; height: 10px"
                 >
                   <v-list-item-content>
-                    <v-list-item-title>Pedir</v-list-item-title>
+                    <v-list-item-title class="subtitle-2 grey--text text--darken-2">Pedir</v-list-item-title>
                   </v-list-item-content>
 
                   <v-list-item-icon style="margin: auto 5px">
-                    <v-icon>mdi-swap-horizontal</v-icon>
+                    <v-icon size="20">mdi-swap-horizontal</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
               </v-list>

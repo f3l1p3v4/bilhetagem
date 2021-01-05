@@ -1,9 +1,10 @@
 <template>
   <v-app id="inspire">
-   <v-navigation-drawer
-      app 
+    <v-navigation-drawer
+      app
       clipped
       v-model="drawer"
+      stateless
     >
       <v-list dense nav>
           <v-list-item class="px-2">
@@ -81,6 +82,7 @@ import List from './components/List';
     },
     data: () => ({
       drawer: null,
+      mini: true,
       links: [
         'Dashboard',
         'Messages',
