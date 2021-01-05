@@ -64,8 +64,7 @@
 
     <v-footer color="white">
       <v-col class="text-center text-caption">
-        &copy; 2020/{{ new Date().getFullYear() }} — Copyright. Site desenvolvido por
-        <strong>Felipe Valdez 🚀</strong>
+        &copy; 2020/{{ new Date().getFullYear() }} — Copyright. Direitos reservados.
       </v-col>
     </v-footer>
   </v-app>
