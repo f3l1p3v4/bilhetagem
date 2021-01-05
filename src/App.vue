@@ -63,7 +63,7 @@
     </v-main>
 
     <v-footer color="white">
-      <v-col class="text-center">
+      <v-col class="text-center text-caption">
         &copy; 2020/{{ new Date().getFullYear() }} — Copyright. Site desenvolvido por
         <strong>Felipe Valdez 🚀</strong>
       </v-col>
