@@ -34,7 +34,7 @@
           </v-row>
           <div class="text-center">
             <v-btn color="red" class="white--text">Cancelar</v-btn>
-            <v-btn color="info" class="my-5 ml-5" @click="toSave">Salvar</v-btn>
+            <v-btn color="#2ebc4f" class="my-5 ml-5 white--text" @click="toSave">Salvar</v-btn>
           </div>
         </v-container>
       </v-form>
