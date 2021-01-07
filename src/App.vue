@@ -28,23 +28,13 @@
           nav
           dense
         >
-          <v-list-item link>
-            <v-list-item-icon>
-              <v-icon>mdi-folder-outline</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>My Files</v-list-item-title>
-          </v-list-item>
-          <v-list-item link>
-            <v-list-item-icon>
-              <v-icon>mdi-account-multiple-outline</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Shared with me</v-list-item-title>
-          </v-list-item>
-          <v-list-item link>
-            <v-list-item-icon>
-              <v-icon>mdi-star-outline</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Starred</v-list-item-title>
+          <v-list-item v-for="item in items" :key="item.title" router :to="item.route">
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list>
     </v-navigation-drawer>
@@ -58,8 +48,7 @@
     </v-app-bar>
 
     <v-main class="blue-grey lighten-5">
-      <Form />
-      <List />
+      <router-view />
     </v-main>
 
     <v-footer color="white">
@@ -71,14 +60,8 @@
 </template>
 
 <script>
-import Form from './components/Form';
-import List from './components/List';
 
   export default {
-    components: {
-      Form,
-      List
-    },
     data: () => ({
       drawer: null,
       mini: true,
@@ -95,14 +78,9 @@ import List from './components/List';
         route: "/"
       },
       {
-        title: "Usuários",
-        icon: "mdi-account",
-        route: "/users"
-      },
-      {
-        title: "Produtos",
+        title: "Materias",
         icon: "mdi-archive",
-        route: "/products"
+        route: "/material"
       },
     ]
     }),

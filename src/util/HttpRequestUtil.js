@@ -36,4 +36,15 @@ export default {
       .delete(`/bushes/${busID}`)
       .then(response => response.data);
   },
+  //Infos
+  async searchInfos() {
+    return API_URL
+      .get("/info")
+      .then(response => response.data);
+  },
+  async saveInfos(info) {
+    return API_URL
+      .post("/info", info)
+      .then(response => response.data);
+  },
 };
