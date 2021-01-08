@@ -28,7 +28,7 @@
           nav
           dense
         >
-          <v-list-item v-for="item in items" :key="item.title" router :to="item.route">
+          <v-list-item v-for="item in items" :key="item.title" router :to="item.route" @click="drawer = !drawer">
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
