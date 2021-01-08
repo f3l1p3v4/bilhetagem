@@ -28,14 +28,35 @@
           nav
           dense
         >
-          <v-list-item v-for="item in items" :key="item.title" router :to="item.route" @click="drawer = !drawer">
+          <v-list-item router to="/" @click="drawer = !drawer">
             <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
+              <v-icon>mdi-home</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title>Home</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+      <v-list-group
+        :value="true"
+        prepend-icon="mdi-ballot"
+        color="grey darken-3"
+      >
+        <template v-slot:activator>
+          <v-list-item-title>Materias</v-list-item-title>
+        </template>
+          <v-list-item
+            class="ml-6"
+            router to="/404" @click="drawer = !drawer"
+          >
+            <v-list-item-title>VCG</v-list-item-title>
+          </v-list-item>
+          <v-list-item
+            class="ml-6"
+            router to="/material" @click="drawer = !drawer"
+          >
+            <v-list-item-title>JTU</v-list-item-title>
+          </v-list-item>
+        </v-list-group>
         </v-list>
     </v-navigation-drawer>
 
@@ -82,7 +103,11 @@
         icon: "mdi-archive",
         route: "/material"
       },
-    ]
+    ],
+    admins: [
+      ['Management', 'mdi-account-multiple-outline'],
+      ['Settings', 'mdi-cog-outline'],
+    ],
     }),
   }
 </script>

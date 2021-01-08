@@ -43,9 +43,9 @@
     <div class="ma-6">
       <v-card class="rounded-Xg">
         <div class="text-center pt-4">
-          <h1>Materias</h1>
+          <h1>Materias JTU</h1>
         </div>
-        <v-simple-table class="pa-6 rounded-lg">
+        <!-- <v-simple-table class="pa-6 rounded-lg">
           <template v-slot:default>
             <thead>
               <tr>
@@ -64,7 +64,24 @@
               </tr>
             </tbody>
           </template>
-        </v-simple-table>
+        </v-simple-table> -->
+
+        <v-card>
+          <v-card-title>
+            <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              label="Pesquisar"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-title>
+          <v-data-table
+            :headers="headers"
+            :items="infos"
+            :search="search"
+          ></v-data-table>
+        </v-card>
         
         <template>
           <v-row justify="center">
@@ -118,6 +135,25 @@
 import HttpRequestUtil from "@/util/HttpRequestUtil";
 export default {
   data: () => ({
+    search: '',
+    headers: [
+      {
+        text: 'CARRO',
+        value: 'bus',
+      },
+      { 
+        text: 'ITINERÁRIO', 
+        value: 'itinerario' 
+      },
+      { 
+        text: 'COMANDO', 
+        value: 'command' 
+      },
+      { 
+        text: 'TABLET', 
+        value: 'tablet' 
+      },
+    ],
     valid: false,
     notRegistered: false,
     userStatus: null,
