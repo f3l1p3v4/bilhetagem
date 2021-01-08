@@ -168,7 +168,7 @@ export default {
     itinerario: "",
     tablet: "",
     command: "",
-    itinerarioItem: ['Mobitec 13X128', 'Mobitec 11X112', 'Mobitec 11X96', 'Mobitec 10X96', 'Mobitec 7X96'],
+    itinerarioItem: ['Setbus 13X128', 'Mobitec 13X128', 'Mobitec 11X112', 'Mobitec 11X96', 'Mobitec 10X96', 'Mobitec 7X96'],
     tabletItem: ['IMXT', 'DL'],
     commandItem: ['SETBUS R 1.16', 'ICU403', 'ICU402', 'ICU302', '150CR', '100FS'],
     infos: [],
