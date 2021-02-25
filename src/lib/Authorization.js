@@ -18,4 +18,3 @@ export default class AuthEngine {
       return this._store.getters['auth/getID']
     }
 }
-  
