@@ -1,5 +1,40 @@
 <template>
-    <v-form>
+    <v-form 
+        ref="form"
+        :greedy="true"
+        :autofocus="true"
+        @validation-error="$emit('validation-error')"
+    >
+        <div class="row">
+            <div class="col-12">
+                <v-tabs
+                    v-model="tab"
+                    class="text-primary"
+                    align="left"
+                    ref="Tabs"
+                >
+                    <slot name="formTabs" ref="tabsSlot" :setTab="setTab" />
+                </v-tabs>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <v-tab-panels >
+                    <slot name="panels" />
+                </v-tab-panels>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="v-gutter-x-md float-right">
+                    <slot name="formActions"/>
+                    <v-btn color="secondary" label="Voltar" @click="$router.go(-1)"/>
+                    <v-btn color="primary" label="Salvar" @click="save"/>
+                </div>
+            </div>
+        </div>
     </v-form>
 </template>
 
@@ -52,7 +87,7 @@ export default {
     mounted () {
         this.$refs.form.resetValidation();
         this.tab = this.$refs?.$slots?.default[0]?.componentOptions?.propsData?.name || '';
-        
+
     }
 }
 </script>
