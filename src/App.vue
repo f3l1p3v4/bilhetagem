@@ -57,6 +57,14 @@
             <v-list-item-title>JTU</v-list-item-title>
           </v-list-item>
         </v-list-group>
+          <v-list-item router to="/car/new" @click="drawer = !drawer">
+            <v-list-item-action>
+              <v-icon>mdi-home</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Car</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </v-list>
     </v-navigation-drawer>
 
