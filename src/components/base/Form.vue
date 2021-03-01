@@ -30,8 +30,8 @@
             <div class="col-12">
                 <div class="v-gutter-x-md float-right">
                     <slot name="formActions"/>
-                    <v-btn color="secondary" label="Voltar" @click="$router.go(-1)"/>
-                    <v-btn color="primary" label="Salvar" @click="save"/>
+                    <v-btn color="secondary" @click="$router.go(-1)">Voltar</v-btn>
+                    <v-btn color="primary" @click="save">Salvar</v-btn>
                 </div>
             </div>
         </div>
