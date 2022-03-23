@@ -13,7 +13,6 @@ export default class Car extends BaseModel {
             group: data?.group,
         }
 
-        /* VALIDATORS */
         this.validators = {
             number_car: [
                 v => !!v || 'Carro é obrigatório',
