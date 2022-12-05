@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: "https://backend-bilhetagem.herokuapp.com",
+  baseURL: "https://ekv8js.sse.codesandbox.io/",
 })
 
 export default api;
